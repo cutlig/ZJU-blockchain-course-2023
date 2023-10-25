@@ -3,10 +3,10 @@ pragma solidity ^0.8.20;
 
 // Uncomment the line to use openzeppelin/ERC721
 // You can use this dependency directly because it has been installed by TA already
-// import "@openzeppelin/contracts/token/ERC721/ERC721.sol";
+ import "@openzeppelin/contracts/token/ERC721/ERC721.sol";
 
 // Uncomment this line to use console.log
-// import "hardhat/console.sol";
+ import "hardhat/console.sol";
 
 contract BorrowYourCar {
 
