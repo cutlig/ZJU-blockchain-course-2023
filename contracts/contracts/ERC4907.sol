@@ -25,7 +25,7 @@ contract ERC4907 is ERC721, IERC4907 {
     /// @param user  The new user of the NFT
     /// @param expires  UNIX timestamp, The new user could use the NFT before expires
     function setUser(uint256 tokenId, address user, uint64 expires) public virtual{
-        require(_isApprovedOrOwner(msg.sender, tokenId), "ERC4907: transfer caller is not owner nor approved");
+      //  require(_isApprovedOrOwner(msg.sender, tokenId), "ERC4907: transfer caller is not owner nor approved");
         UserInfo storage info =  _users[tokenId];
         info.user = user;
         info.expires = expires;
@@ -58,16 +58,16 @@ contract ERC4907 is ERC721, IERC4907 {
         return interfaceId == type(IERC4907).interfaceId || super.supportsInterface(interfaceId);
     }
 
-    function _beforeTokenTransfer(
-        address from,
-        address to,
-        uint256 tokenId
-    ) internal virtual override{
-        super._beforeTokenTransfer(from, to, tokenId);
+    // function _beforeTokenTransfer(
+    //     address from,
+    //     address to,
+    //     uint256 tokenId
+    // ) internal virtual override{
+    //     super._beforeTokenTransfer(from, to, tokenId);
 
-        if (from != to && _users[tokenId].user != address(0)) {
-            delete _users[tokenId];
-            emit UpdateUser(tokenId, address(0), 0);
-        }
-    }
+    //     if (from != to && _users[tokenId].user != address(0)) {
+    //         delete _users[tokenId];
+    //         emit UpdateUser(tokenId, address(0), 0);
+    //     }
+    // }
 }
