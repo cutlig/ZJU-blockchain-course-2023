@@ -34,6 +34,7 @@
 3. 在 `./contracts` 中编译合约，运行如下的命令：
     ```bash
     npx hardhat compile
+    npx hardhat run ./scripts/deploy.ts
     ```
 4. ...
 5. ...
