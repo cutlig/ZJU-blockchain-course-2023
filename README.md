@@ -49,6 +49,7 @@
     ```bash
     npm run start
     ```
+8. 在前端点击连接钱包，连接ganache，导入ganache账户即可进行操作
 
 ## 功能实现分析
 
